@@ -2,3 +2,5 @@
 .DS_Store
 .idea/
 composer.lock
+.phpcs.xml
+phpcs.xml
