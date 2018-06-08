@@ -13,6 +13,7 @@ final class Yoast_Purge_Attachment_Sitemap_Provider extends WPSEO_Post_Type_Site
 	 */
 	public function __construct( Yoast_Purge_Options $options ) {
 		$this->options = $options;
+		$this->activation_timestamp = (int) $this->options->get_activation_date();
 	}
 
 	/**
@@ -50,7 +51,9 @@ final class Yoast_Purge_Attachment_Sitemap_Provider extends WPSEO_Post_Type_Site
 	public function get_url( $post ) {
 		$link = parent::get_url( $post );
 
-		$link['mod'] = date( 'Y-m-d H:i:s', $this->options->get_activation_date() );
+		if ( strtotime( $link['mod'] ) < $this->activation_timestamp ) {
+			$link['mod'] = date( 'Y-m-d H:i:s', $this->activation_timestamp );
+		}
 
 		return $link;
 	}
@@ -94,7 +97,9 @@ final class Yoast_Purge_Attachment_Sitemap_Provider extends WPSEO_Post_Type_Site
 	 * @return array Modified sitemap link index.
 	 */
 	public function set_modification_date( $entry ) {
-		$entry['lastmod'] = date( 'Y-m-d H:i:s', $this->options->get_activation_date() );
+		if ( strtotime( $entry['lastmod'] ) < $this->activation_timestamp ) {
+			$entry['lastmod'] = date( 'Y-m-d H:i:s', $this->activation_timestamp );
+		}
 
 		return $entry;
 	}
