@@ -1,10 +1,21 @@
 <?php
+/**
+ * Sitemap provider.
+ *
+ * @package Yoast\Search_Index_Purge
+ */
 
-
+/**
+ * Sitemap attachment provider.
+ */
 final class Yoast_Purge_Attachment_Sitemap_Provider extends WPSEO_Post_Type_Sitemap_Provider {
 
-	/** @var Yoast_Purge_Options */
-	protected $options;
+	/**
+	 * Yoast Purge options handler.
+	 *
+	 * @var Yoast_Purge_Options
+	 */
+	private $options;
 
 	/**
 	 * Initializes.

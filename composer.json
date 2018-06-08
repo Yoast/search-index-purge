@@ -1,13 +1,19 @@
 {
     "name": "yoast/search-index-purge",
+    "description": "Yoast Search Index Purge WordPress plugin",
     "type": "wordpress-plugin",
-    "description": "Search Index Purge plugin to combat Search Index problems",
+    "require-dev": {
+        "yoast/yoastcs": "^0.5",
+        "roave/security-advisories": "dev-master",
+        "dealerdirect/phpcodesniffer-composer-installer": "0.4.3"
+    },
     "license": "GPL-2.0-or-later",
     "authors": [
         {
-            "name": "Team Yoast",
+            "name": "Yoast",
             "email": "support@yoast.com"
         }
     ],
+    "minimum-stability": "stable",
     "require": {}
 }

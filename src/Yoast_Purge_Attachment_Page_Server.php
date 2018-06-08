@@ -1,4 +1,9 @@
 <?php
+/**
+ * Attachment page handler.
+ *
+ * @package Yoast\Search_Index_Purge
+ */
 
 /**
  * Serves a 410 page on attachment pages.
@@ -6,7 +11,9 @@
 final class Yoast_Purge_Attachment_Page_Server {
 
 	/**
-	 * @var array Valid image mime types.
+	 * Valid image mime types.
+	 *
+	 * @var array
 	 */
 	private $valid_image_types = array( 'image/jpeg', 'image/gif', 'image/png' );
 
@@ -27,7 +34,7 @@ final class Yoast_Purge_Attachment_Page_Server {
 	 */
 	public function render_file( $filepath, $mime_type ) {
 		// Open the attachment in a binary mode.
-		$file = fopen( $filepath, 'rb' );
+		$file = fopen( $filepath, 'rb' ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_read_fopen
 
 		// Send the right headers.
 		header( 'Content-Type: ' . $mime_type );
@@ -71,7 +78,7 @@ final class Yoast_Purge_Attachment_Page_Server {
 	 * @return bool Whether or not the given mime type is for an image.
 	 */
 	private function is_image( $mime_type ) {
-		return in_array( $mime_type, $this->valid_image_types );
+		return in_array( $mime_type, $this->valid_image_types, true );
 	}
 
 	/**

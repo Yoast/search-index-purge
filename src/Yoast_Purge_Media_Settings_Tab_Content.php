@@ -1,4 +1,9 @@
 <?php
+/**
+ * Override attachment settings page content.
+ *
+ * @package Yoast\Search_Index_Purge
+ */
 
 /**
  * This class will override the Media content tab content.

@@ -1,4 +1,9 @@
 <?php
+/**
+ * Set Yoast SEO settings.
+ *
+ * @package Yoast\Search_Index_Purge
+ */
 
 /**
  * This class ensures the Yoast SEO Settings are being set as needed.

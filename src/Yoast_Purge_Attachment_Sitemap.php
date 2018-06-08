@@ -1,10 +1,21 @@
 <?php
+/**
+ * Custom attachment sitemap override.
+ *
+ * @package Yoast\Search_Index_Purge
+ */
 
-
+/**
+ * Override attachment sitemap integration.
+ */
 final class Yoast_Purge_Attachment_Sitemap {
 
-	/** @var Yoast_Purge_Options */
-	protected $options;
+	/**
+	 * Yoast Purge options handler.
+	 *
+	 * @var Yoast_Purge_Options
+	 */
+	private $options;
 
 	/**
 	 * Initializes.
