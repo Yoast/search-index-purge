@@ -1,3 +1,6 @@
 /vendor/
-.DS_Store
+/node_modules/
 .idea/
+artifact.zip
+/artifact/
+yarn-error.log

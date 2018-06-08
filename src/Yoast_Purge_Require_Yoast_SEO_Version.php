@@ -1,4 +1,9 @@
 <?php
+/**
+ * Yoast SEO dependency management.
+ *
+ * @package Yoast\Search_Index_Purge
+ */
 
 /**
  * The class to check for environment requirements.
@@ -36,14 +41,16 @@ final class Yoast_Purge_Require_Yoast_SEO_Version {
 		}
 
 		if ( ! $this->has_required_version() ) {
-			$this->display_admin_error( sprintf(
-				/* translators: %1$s expands to Yoast SEO. */
-				esc_html__(
-					'Please upgrade the %1$s plugin to the latest version to allow the Yoast SEO: Search Index Purge plugin to work.',
-					'yoast-search-index-purge'
-				),
-				'Yoast SEO'
-			) );
+			$this->display_admin_error(
+				sprintf(
+					/* translators: %1$s expands to Yoast SEO. */
+					esc_html__(
+						'Please upgrade the %1$s plugin to the latest version to allow the Yoast SEO: Search Index Purge plugin to work.',
+						'yoast-search-index-purge'
+					),
+					'Yoast SEO'
+				)
+			);
 		}
 	}
 
@@ -64,6 +71,7 @@ final class Yoast_Purge_Require_Yoast_SEO_Version {
 	 * @return void
 	 */
 	private function display_admin_error( $message ) {
+		// phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
 		echo '<div class="error"><p>' . $message . '</p></div>';
 	}
 

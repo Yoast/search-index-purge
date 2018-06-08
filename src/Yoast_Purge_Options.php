@@ -1,11 +1,16 @@
 <?php
+/**
+ * Search Index Purge options handler.
+ *
+ * @package Yoast\Search_Index_Purge
+ */
 
 /**
  * Handels retrieving and saving options for the plugin.
  */
 final class Yoast_Purge_Options {
 
-	const KEY_ACTIVATION_DATE = 'yoast-index-purge-activation-date';
+	const KEY_ACTIVATION_DATE        = 'yoast-index-purge-activation-date';
 	const KEY_PURGE_ATTACHMENT_PAGES = 'yoast-index-purge-attachment-pages';
 
 	/**
@@ -60,7 +65,7 @@ final class Yoast_Purge_Options {
 	 * @return bool Whether or not the value was updated.
 	 */
 	public function set_purge_attachment_pages( $value ) {
-		$value = $value ? 'true' : 'false';
+		$value = ( $value ) ? 'true' : 'false';
 
 		return update_option( self::KEY_PURGE_ATTACHMENT_PAGES, $value );
 	}
@@ -75,7 +80,7 @@ final class Yoast_Purge_Options {
 		}
 
 		$purge_attachment_pages = $this->get_purge_attachment_pages();
-		if ( $purge_attachment_pages === null) {
+		if ( $purge_attachment_pages === null ) {
 			$this->set_purge_attachment_pages( true );
 		}
 	}

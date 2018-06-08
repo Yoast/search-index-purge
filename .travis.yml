@@ -13,7 +13,7 @@ jobs:
   fast_finish: true
   include:
     - php: 7.2
-      env: PHPLINT=1
+      env: PHPLINT=1 PHPCS=1
     - php: 5.2
       env: PHPLINT=1
       # As 'trusty' is not supporting PHP 5.2/5.3 anymore, we need to force using 'precise'.
@@ -61,12 +61,13 @@ script:
     travis_time_finish && travis_fold end "PHP.check"
   fi
 # PHP CS
-#- |
-#  if [[ "$PHPCS" == "1" ]]; then
-#    travis_fold start "PHP.code-style" && travis_time_start
-#    vendor/bin/phpcs -q --runtime-set ignore_warnings_on_exit 1
-#    travis_time_finish && travis_fold end "PHP.code-style"
-#  fi
+- |
+  if [[ "$PHPCS" == "1" ]]; then
+    travis_fold start "PHP.code-style" && travis_time_start
+    vendor/bin/phpcs -q --runtime-set ignore_warnings_on_exit 1
+    travis_time_finish && travis_fold end "PHP.code-style"
+  fi
+
 # Validate the composer.json file.
 # @link https://getcomposer.org/doc/03-cli.md#validate
 - if [[ $TRAVIS_PHP_VERSION == "5.3" || $TRAVIS_PHP_VERSION == "7.2" ]]; then composer validate --no-check-all; fi
