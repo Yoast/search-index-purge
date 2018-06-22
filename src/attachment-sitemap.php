@@ -107,7 +107,7 @@ final class Yoast_Purge_Attachment_Sitemap {
 	 * @return array List of external sitemap providers without our provider added.
 	 */
 	public function add_provider( $providers ) {
-		require_once YOAST_PURGE_PLUGIN_DIR . '/src/Yoast_Purge_Attachment_Sitemap_Provider.php';
+		require_once YOAST_PURGE_PLUGIN_DIR . '/src/attachment-sitemap-provider.php';
 
 		$providers[] = new Yoast_Purge_Attachment_Sitemap_Provider( $this->options );
 

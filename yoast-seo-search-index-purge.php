@@ -42,14 +42,14 @@ define( 'YOAST_PURGE_PLUGIN_DIR', dirname( __FILE__ ) );
 define( 'YOAST_PURGE_FILE', __FILE__ );
 define( 'YOAST_PURGE_VERSION', '1.0.0' );
 
-require_once YOAST_PURGE_PLUGIN_DIR . '/src/Yoast_Purge_Attachment_Page_Server.php';
-require_once YOAST_PURGE_PLUGIN_DIR . '/src/Yoast_Purge_Attachment_Sitemap.php';
-require_once YOAST_PURGE_PLUGIN_DIR . '/src/Yoast_Purge_Control_Yoast_SEO_Settings.php';
-require_once YOAST_PURGE_PLUGIN_DIR . '/src/Yoast_Purge_Media_Settings_Tab_Content.php';
-require_once YOAST_PURGE_PLUGIN_DIR . '/src/Yoast_Purge_Options.php';
-require_once YOAST_PURGE_PLUGIN_DIR . '/src/Yoast_Purge_Plugin.php';
-require_once YOAST_PURGE_PLUGIN_DIR . '/src/Yoast_Purge_Upgrade.php';
-require_once YOAST_PURGE_PLUGIN_DIR . '/src/Yoast_Purge_Require_Yoast_SEO_Version.php';
+require_once YOAST_PURGE_PLUGIN_DIR . '/src/attachment-page-server.php';
+require_once YOAST_PURGE_PLUGIN_DIR . '/src/attachment-sitemap.php';
+require_once YOAST_PURGE_PLUGIN_DIR . '/src/control-yoast-seo-settings.php';
+require_once YOAST_PURGE_PLUGIN_DIR . '/src/media-settings-tab-content.php';
+require_once YOAST_PURGE_PLUGIN_DIR . '/src/options.php';
+require_once YOAST_PURGE_PLUGIN_DIR . '/src/plugin.php';
+require_once YOAST_PURGE_PLUGIN_DIR . '/src/upgrade.php';
+require_once YOAST_PURGE_PLUGIN_DIR . '/src/require-yoast-seo-version.php';
 
 global $yoast_purge_plugin;
 $yoast_purge_plugin = new Yoast_Purge_Plugin();
