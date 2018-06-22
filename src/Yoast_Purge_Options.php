@@ -25,6 +25,12 @@ final class Yoast_Purge_Options {
 	 * @var string
 	 */
 	const KEY_PURGE_ATTACHMENT_PAGES = 'yoast-index-purge-attachment-pages';
+
+	/**
+	 * Name of the option which the version number of the plugin.
+	 *
+	 * @var string
+	 */
 	const KEY_VERSION = 'yoast-index-purge-version';
 
 	/**

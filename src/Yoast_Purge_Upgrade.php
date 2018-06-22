@@ -1,7 +1,20 @@
 <?php
+/**
+ * Yoast SEO: Search index purge plugin file.
+ *
+ * @package   WPSEO\Main
+ * @copyright Copyright (C) 2018, Yoast BV - support@yoast.com
+ * @license   http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License, version 3 or higher
+ */
 
+/**
+ * Upgrade routine.
+ */
 final class Yoast_Purge_Upgrade {
+
 	/**
+	 * Yoast Purge options handler.
+	 *
 	 * @var Yoast_Purge_Options
 	 */
 	private $options;
@@ -9,7 +22,7 @@ final class Yoast_Purge_Upgrade {
 	/**
 	 * Yoast_Purge_Upgrade constructor.
 	 *
-	 * @param Yoast_Purge_Options $options
+	 * @param Yoast_Purge_Options $options Yoast Purge options handler.
 	 */
 	public function __construct( Yoast_Purge_Options $options ) {
 		$this->options = $options;
