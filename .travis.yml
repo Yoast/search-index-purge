@@ -18,7 +18,7 @@ jobs:
   fast_finish: true
   include:
     - php: 7.2
-      env: VALIDATE_COMPOSER=1
+      env: VALIDATE_COMPOSER=1 PHPCS=1
     - php: 5.3
       env: VALIDATE_COMPOSER=1
       # As 'trusty' is not supporting PHP 5.2/5.3 anymore, we need to force using 'precise'.
@@ -72,12 +72,12 @@ script:
 - find -L . -path ./vendor -prune -o -path ./node_modules -prune -o -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
 
 # PHP CS
-#- |
-#  if [[ "$PHPCS" == "1" ]]; then
-#    travis_fold start "PHP.code-style" && travis_time_start
-#    vendor/bin/phpcs -q --runtime-set ignore_warnings_on_exit 1
-#    travis_time_finish && travis_fold end "PHP.code-style"
-#  fi
+- |
+  if [[ "$PHPCS" == "1" ]]; then
+    travis_fold start "PHP.code-style" && travis_time_start
+    vendor/bin/phpcs -q
+    travis_time_finish && travis_fold end "PHP.code-style"
+  fi
 # Validate the composer.json file.
 # @link https://getcomposer.org/doc/03-cli.md#validate
 - if [[ $VALIDATE_COMPOSER == "1" ]]; then composer validate --no-check-all; fi

@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<ruleset name="Yoast Search Index Purge">
+	<description>Yoast Search Index Purge rules for PHP_CodeSniffer</description>
+
+	<!--
+	#############################################################################
+	COMMAND LINE ARGUMENTS
+	https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml
+	#############################################################################
+	-->
+
+	<file>.</file>
+
+	<exclude-pattern>vendor/*</exclude-pattern>
+
+	<!-- Only check PHP files. -->
+	<arg name="extensions" value="php"/>
+
+	<!-- Show progress, show the error codes for each message (source). -->
+	<arg value="ps"/>
+
+	<!-- Strip the filepaths down to the relevant bit. -->
+	<arg name="basepath" value="./"/>
+
+	<!-- Check up to 8 files simultanously. -->
+	<arg name="parallel" value="8"/>
+
+
+	<!--
+	#############################################################################
+	USE THE YoastCS RULESET
+	#############################################################################
+	-->
+
+	<rule ref="Yoast"/>
+
+
+	<!--
+	#############################################################################
+	SNIFF SPECIFIC CONFIGURATION
+	#############################################################################
+	-->
+
+	<!-- Set the minimum supported WP version. This is used by several sniffs. -->
+	<config name="minimum_supported_wp_version" value="4.8"/>
+
+	<!-- Verify that all gettext calls use the correct text domain. -->
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="yoast-search-index-purge"/>
+			</property>
+		</properties>
+	</rule>
+
+	<rule ref="Yoast.Files.FileName">
+		<properties>
+			<!-- Remove the following prefixes from the names of object structures. -->
+			<property name="prefixes" type="array">
+				<element value="Yoast_Purge"/>
+			</property>
+		</properties>
+	</rule>
+
+	<!-- Verify that everything in the global namespace is prefixed with a plugin specific prefix. -->
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<!-- Provide the prefixes to look for. -->
+			<property name="prefixes" type="array">
+				<element value="yoast"/>
+			</property>
+		</properties>
+	</rule>
+
+
+	<!--
+	#############################################################################
+	SELECTIVE EXCLUSIONS
+	Exclude specific files for specific sniffs and/or exclude sub-groups in sniffs.
+	#############################################################################
+	-->
+
+	<!-- Not an issue unless and until this plugin would apply for acceptance on the WP VIP platform. -->
+	<rule ref="WordPress.VIP.PostsPerPage.posts_per_page_posts_per_page">
+		<exclude-pattern>*/src/attachment-sitemap\.php$</exclude-pattern>
+	</rule>
+
+</ruleset>

@@ -67,10 +67,12 @@ final class Yoast_Purge_Require_Yoast_SEO_Version {
 	 * Displays an admin error.
 	 *
 	 * @param string $message Notice to display.
+	 *                        The notice should be pre-escaped for output.
 	 *
 	 * @return void
 	 */
 	private function display_admin_error( $message ) {
+		// phpcs:ignore WordPress.XSS.EscapeOutput -- Pre-escaped message expected.
 		echo '<div class="error"><p>' . $message . '</p></div>';
 	}
 

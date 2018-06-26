@@ -36,6 +36,7 @@ final class Yoast_Purge_Attachment_Page_Server {
 	 */
 	public function render_file( $filepath, $mime_type ) {
 		// Open the attachment in a binary mode.
+		// phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_read_fopen -- Local file, optimized solution.
 		$file = fopen( $filepath, 'rb' );
 
 		// Send the right headers.
