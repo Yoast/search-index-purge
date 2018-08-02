@@ -11,6 +11,7 @@
  * The class to check for environment requirements.
  */
 final class Yoast_Purge_Require_Yoast_SEO_Version {
+
 	/**
 	 * Registers hooks to WordPress.
 	 */
