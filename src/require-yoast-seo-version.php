@@ -72,7 +72,7 @@ final class Yoast_Purge_Require_Yoast_SEO_Version {
 	 * @return void
 	 */
 	private function display_admin_error( $message ) {
-		// phpcs:ignore WordPress.XSS.EscapeOutput -- Pre-escaped message expected.
+		// phpcs:ignore WordPress.Security.EscapeOutput -- Pre-escaped message expected.
 		echo '<div class="error"><p>' . $message . '</p></div>';
 	}
 

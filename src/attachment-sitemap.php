@@ -80,7 +80,7 @@ final class Yoast_Purge_Attachment_Sitemap {
 			array(
 				'post_type'      => 'attachment',
 				'post_status'    => 'any',
-				'posts_per_page' => '100000',
+				'posts_per_page' => '100000', // phpcs:ignore WordPress.WP.PostsPerPage -- This is not for display.
 				'date_query'     => array(
 					'after' => date( 'Y-m-d H:i:s', $timestamp ),
 				),
