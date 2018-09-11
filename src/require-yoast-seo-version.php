@@ -44,14 +44,13 @@ final class Yoast_Purge_Require_Yoast_SEO_Version {
 		}
 
 		if ( ! $this->has_required_version() ) {
-			$this->display_admin_error( sprintf(
-				/* translators: %1$s expands to Yoast SEO. */
-				esc_html__(
-					'Please upgrade the %1$s plugin to the latest version to allow the Yoast SEO: Search Index Purge plugin to work.',
-					'yoast-search-index-purge'
-				),
-				'Yoast SEO'
-			) );
+			/* translators: %1$s expands to Yoast SEO. */
+			$upgrade_msg = esc_html__(
+				'Please upgrade the %1$s plugin to the latest version to allow the Yoast SEO: Search Index Purge plugin to work.',
+				'yoast-search-index-purge'
+			);
+
+			$this->display_admin_error( sprintf( $upgrade_msg, 'Yoast SEO' ) );
 		}
 	}
 
