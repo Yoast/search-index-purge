@@ -87,6 +87,8 @@ final class Yoast_Purge_Plugin {
 		return $this->integrations;
 	}
 
+	/* ********************* DEPRECATED METHODS ********************* */
+
 	/**
 	 * Executes everything we need on activation.
 	 *
