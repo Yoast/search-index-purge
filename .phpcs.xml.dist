@@ -67,22 +67,9 @@
 		<properties>
 			<!-- Provide the prefixes to look for. -->
 			<property name="prefixes" type="array">
-				<element value="yoast"/>
+				<element value="yoast_purge"/>
 			</property>
 		</properties>
-	</rule>
-
-
-	<!--
-	#############################################################################
-	SELECTIVE EXCLUSIONS
-	Exclude specific files for specific sniffs and/or exclude sub-groups in sniffs.
-	#############################################################################
-	-->
-
-	<!-- Not an issue unless and until this plugin would apply for acceptance on the WP VIP platform. -->
-	<rule ref="WordPress.VIP.PostsPerPage.posts_per_page_posts_per_page">
-		<exclude-pattern>*/src/attachment-sitemap\.php$</exclude-pattern>
 	</rule>
 
 </ruleset>

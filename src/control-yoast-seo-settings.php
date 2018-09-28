@@ -11,6 +11,7 @@
  * This class ensures the Yoast SEO Settings are being set as needed.
  */
 class Yoast_Purge_Control_Yoast_SEO_Settings {
+
 	/**
 	 * Adds WordPress hooks and filters.
 	 *

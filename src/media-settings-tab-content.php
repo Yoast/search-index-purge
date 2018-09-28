@@ -11,6 +11,7 @@
  * This class will override the Media content tab content.
  */
 class Yoast_Purge_Media_Settings_Tab_Content {
+
 	/**
 	 * Registers the WordPress hooks and filters.
 	 */
