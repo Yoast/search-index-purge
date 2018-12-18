@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
-<ruleset name="Yoast Search Index Purge">
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	name="Yoast Search Index Purge"
+	xsi:noNamespaceSchemaLocation="./vendor/squizlabs/php_codesniffer/phpcs.xsd">
+
 	<description>Yoast Search Index Purge rules for PHP_CodeSniffer</description>
 
 	<!--
@@ -32,7 +35,11 @@
 	#############################################################################
 	-->
 
-	<rule ref="Yoast"/>
+	<rule ref="Yoast">
+		<!-- This plugin currently does not have unit tests, so using PHPUnit
+			 ignore annotations is not (yet) necessary. -->
+		<exclude name="Yoast.Commenting.CodeCoverageIgnoreDeprecated"/>
+	</rule>
 
 
 	<!--

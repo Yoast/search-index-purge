@@ -20,11 +20,9 @@
         "forum" : "https://wordpress.org/support/plugin/search-index-purge",
         "source": "https://github.com/Yoast/search-index-purge"
     },
-    "require": {},
     "require-dev": {
         "roave/security-advisories": "dev-master",
-        "yoast/yoastcs": "^1.0.0",
-        "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3"
+        "yoast/yoastcs": "^1.1.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true

@@ -34,6 +34,8 @@ class Yoast_Purge_Control_Yoast_SEO_Settings {
 		return $input;
 	}
 
+	/* ********************* DEPRECATED METHODS ********************* */
+
 	/**
 	 * Ensures the settings are set as we recommend them to be.
 	 *
