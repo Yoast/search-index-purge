@@ -75,6 +75,7 @@
 			<!-- Provide the prefixes to look for. -->
 			<property name="prefixes" type="array">
 				<element value="yoast_purge"/>
+				<element value="Yoast\WP\Purge"/>
 			</property>
 		</properties>
 	</rule>
