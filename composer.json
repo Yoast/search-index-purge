@@ -7,7 +7,7 @@
         "wordpress",
         "seo"
     ],
-    "homepage": "https://github.com/Yoast/search-index-purge",
+    "homepage": "https://wordpress.org/plugins/yoast-seo-search-index-purge/",
     "authors": [
         {
             "name": "Team Yoast",
@@ -17,13 +17,28 @@
     ],
     "support": {
         "issues": "https://github.com/Yoast/search-index-purge/issues",
-        "forum" : "https://wordpress.org/support/plugin/search-index-purge",
+        "forum" : "https://wordpress.org/support/plugin/yoast-seo-search-index-purge",
         "source": "https://github.com/Yoast/search-index-purge"
+    },
+    "require": {
+        "php": ">=5.2"
     },
     "require-dev": {
         "roave/security-advisories": "dev-master",
         "yoast/yoastcs": "^1.2.2"
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "scripts": {
+        "config-yoastcs" : [
+            "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run",
+            "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs --config-set default_standard Yoast"
+        ],
+        "check-cs": [
+            "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs"
+        ],
+        "fix-cs": [
+            "@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf"
+        ]
+    }
 }
