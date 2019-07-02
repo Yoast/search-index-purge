@@ -59,7 +59,7 @@ final class Yoast_Purge_Attachment_Sitemap {
 		// Only count items added before activating.
 		$where .= $wpdb->prepare(
 			" AND {$wpdb->posts}.post_date <= %s",
-			date( 'Y-m-d H:i:s', $this->options->get_activation_date() )
+			gmdate( 'Y-m-d H:i:s', $this->options->get_activation_date() )
 		);
 
 		return $where;
@@ -82,7 +82,7 @@ final class Yoast_Purge_Attachment_Sitemap {
 				'post_status'    => 'any',
 				'posts_per_page' => '100000', // phpcs:ignore WordPress.WP.PostsPerPage -- This is not for display.
 				'date_query'     => array(
-					'after' => date( 'Y-m-d H:i:s', $timestamp ),
+					'after' => gmdate( 'Y-m-d H:i:s', $timestamp ),
 				),
 				'fields'         => 'ids',
 			)
