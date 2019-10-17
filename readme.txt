@@ -6,7 +6,7 @@ License URI: http://www.gnu.org/licenses/gpl.html
 Tags: SEO, XML sitemap, Google Search Console, Content analysis, Readability
 Requires at least: 4.8
 Tested up to: 5.2
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 Requires PHP: 5.2.4
 
 Remove attachment URLs from Google's index as fast as possible to prevent thin content penalties.
@@ -62,6 +62,16 @@ You'll find answers to many of your questions on [kb.yoast.com](https://yoa.st/1
 1. The plugin takes over the Search Appearance &rarr; Media settings from Yoast SEO.
 
 == Changelog ==
+
+= 1.1 =
+Release date: June 27th, 2018
+
+Enhancements:
+* Excludes attachments from the purge sitemap that were added after activating this plugin.
+
+Bugfixes:
+* Fixes a bug where the Attachement sitemap has the wrong "Last modified" date, this should be the time the plugin was activated.
+* Fixes a bug where the "Redirect attachment URLs to the attachment itself?" can become "No" when saving other settings in Yoast SEO.
 
 = 1.0 =
 Release date: May 30th, 2018
