@@ -17,14 +17,14 @@ final class Yoast_Purge_Attachment_Page_Server {
 	 *
 	 * @var array
 	 */
-	private $valid_image_types = array( 'image/jpeg', 'image/gif', 'image/png' );
+	private $valid_image_types = [ 'image/jpeg', 'image/gif', 'image/png' ];
 
 	/**
 	 * Registers to WordPress.
 	 */
 	public function register_hooks() {
 		// We need to do this earlier than Yoast SEO redirects the attachment.
-		add_action( 'template_redirect', array( $this, 'serve' ), -10 );
+		add_action( 'template_redirect', [ $this, 'serve' ], -10 );
 		add_action( 'wpseo_attachment_redirect_url', '__return_null' );
 	}
 

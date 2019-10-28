@@ -32,12 +32,12 @@ final class Yoast_Purge_Attachment_Sitemap {
 	 * Registers hooks to WordPress.
 	 */
 	public function register_hooks() {
-		add_filter( 'wpseo_sitemaps_providers', array( $this, 'add_provider' ) );
-		add_filter( 'wpseo_build_sitemap_post_type', array( $this, 'change_type' ) );
+		add_filter( 'wpseo_sitemaps_providers', [ $this, 'add_provider' ] );
+		add_filter( 'wpseo_build_sitemap_post_type', [ $this, 'change_type' ] );
 
 		// Exclude attachments that were added after activation.
-		add_filter( 'wpseo_typecount_where', array( $this, 'typecount_where_filter' ), 10, 2 );
-		add_filter( 'wpseo_exclude_from_sitemap_by_post_ids', array( $this, 'exclude_newly_added_attachments' ), 10, 2 );
+		add_filter( 'wpseo_typecount_where', [ $this, 'typecount_where_filter' ], 10, 2 );
+		add_filter( 'wpseo_exclude_from_sitemap_by_post_ids', [ $this, 'exclude_newly_added_attachments' ], 10, 2 );
 	}
 
 	/**
@@ -77,15 +77,15 @@ final class Yoast_Purge_Attachment_Sitemap {
 		$timestamp = $this->options->get_activation_date();
 
 		$wp_query = new WP_Query(
-			array(
+			[
 				'post_type'      => 'attachment',
 				'post_status'    => 'any',
 				'posts_per_page' => '100000', // phpcs:ignore WordPress.WP.PostsPerPage -- This is not for display.
-				'date_query'     => array(
+				'date_query'     => [
 					'after' => gmdate( 'Y-m-d H:i:s', $timestamp ),
-				),
+				],
 				'fields'         => 'ids',
-			)
+			]
 		);
 
 		if ( empty( $wp_query->posts ) ) {
