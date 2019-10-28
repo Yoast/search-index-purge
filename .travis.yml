@@ -1,6 +1,5 @@
 language: php
 dist: trusty
-sudo: false
 
 branches:
   only:
@@ -11,25 +10,20 @@ branches:
 
 php:
 - 7.0
-- 5.6
 - "7.4snapshot"
+- "nightly"
 
 jobs:
   fast_finish: true
   include:
     - php: 7.3
       env: VALIDATE_COMPOSER=1 PHPCS=1
-    - php: 5.3
+    - php: 5.6
       env: VALIDATE_COMPOSER=1
-      # As 'trusty' is not supporting PHP 5.2/5.3 anymore, we need to force using 'precise'.
-      dist: precise
-    - php: 5.2
-      # As 'trusty' is not supporting PHP 5.2/5.3 anymore, we need to force using 'precise'.
-      dist: precise
 
   allow_failures:
     # Allow failures for unstable builds.
-    - php: "7.4snapshot"
+    - php: "nightly"
 
 cache:
   directories:
@@ -40,7 +34,7 @@ cache:
     - $HOME/.cache/composer/files
 
 before_install:
-- if [[ "$COVERAGE" != "1" ]]; then phpenv config-rm xdebug.ini || echo 'No xdebug config.'; fi
+- phpenv config-rm xdebug.ini || echo 'No xdebug config.'
 #- openssl aes-256-cbc -K $encrypted_953eef802505_key -iv $encrypted_953eef802505_iv -in github_deploy_key.enc -out github_deploy_key -d
 #- chmod 600 github_deploy_key
 #- eval $(ssh-agent -s)
@@ -73,7 +67,7 @@ script:
 - |
   if [[ "$PHPCS" == "1" ]]; then
     travis_fold start "PHP.code-style" && travis_time_start
-    vendor/bin/phpcs -q
+    composer check-cs -- -q
     travis_time_finish && travis_fold end "PHP.code-style"
   fi
 # Validate the composer.json file.

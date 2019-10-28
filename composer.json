@@ -21,7 +21,7 @@
         "source": "https://github.com/Yoast/search-index-purge"
     },
     "require": {
-        "php": ">=5.2"
+        "php": ">=5.6"
     },
     "require-dev": {
         "roave/security-advisories": "dev-master",
