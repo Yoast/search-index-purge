@@ -31,7 +31,7 @@ final class Yoast_Purge_Attachment_Page_Server {
 	/**
 	 * Renders a file with a specific mime type to the browser.
 	 *
-	 * @param string $filepath Path to the file to render.
+	 * @param string $filepath  Path to the file to render.
 	 * @param string $mime_type Mime type to render it with.
 	 */
 	public function render_file( $filepath, $mime_type ) {
