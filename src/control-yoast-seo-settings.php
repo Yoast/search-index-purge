@@ -40,6 +40,7 @@ class Yoast_Purge_Control_Yoast_SEO_Settings {
 	 * Ensures the settings are set as we recommend them to be.
 	 *
 	 * @deprecated 1.1.0
+	 * @codeCoverageIgnore
 	 */
 	public function enforce_settings() {
 		// Intentionally left empty.

@@ -93,6 +93,7 @@ final class Yoast_Purge_Plugin {
 	 * Executes everything we need on activation.
 	 *
 	 * @deprecated 1.1.0
+	 * @codeCoverageIgnore
 	 */
 	public function activate() {
 		// Intentionally left empty.

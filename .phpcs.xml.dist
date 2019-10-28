@@ -41,10 +41,6 @@
 				<element value="yoast_purge"/>
 			</property>
 		</properties>
-
-		<!-- This plugin currently does not have unit tests, so using PHPUnit
-			 ignore annotations is not (yet) necessary. -->
-		<exclude name="Yoast.Commenting.CodeCoverageIgnoreDeprecated"/>
 	</rule>
 
 
