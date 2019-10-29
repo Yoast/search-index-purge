@@ -4,10 +4,10 @@ Donate link: https://yoa.st/1up
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: SEO, XML sitemap, Google Search Console, Content analysis, Readability
-Requires at least: 4.8
-Tested up to: 5.2
+Requires at least: 5.2
+Tested up to: 5.3
 Stable tag: 1.1.0
-Requires PHP: 5.2.4
+Requires PHP: 5.6.20
 
 Remove attachment URLs from Google's index as fast as possible to prevent thin content penalties.
 
