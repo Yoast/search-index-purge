@@ -34,9 +34,13 @@
 	-->
 
 	<rule ref="Yoast">
-		<!-- This plugin currently does not have unit tests, so using PHPUnit
-			 ignore annotations is not (yet) necessary. -->
-		<exclude name="Yoast.Commenting.CodeCoverageIgnoreDeprecated"/>
+		<!-- Provide the plugin specific prefixes for all naming related sniffs. -->
+		<properties>
+			<property name="prefixes" type="array">
+				<element value="Yoast\WP\Purge"/>
+				<element value="yoast_purge"/>
+			</property>
+		</properties>
 	</rule>
 
 
@@ -58,19 +62,17 @@
 	<rule ref="Yoast.Files.FileName">
 		<properties>
 			<!-- Remove the following prefixes from the names of object structures. -->
-			<property name="prefixes" type="array">
+			<property name="oo_prefixes" type="array">
 				<element value="Yoast_Purge"/>
 			</property>
 		</properties>
 	</rule>
 
-	<!-- Verify that everything in the global namespace is prefixed with a plugin specific prefix. -->
-	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+	<rule ref="Yoast.NamingConventions.NamespaceName">
 		<properties>
-			<!-- Provide the prefixes to look for. -->
-			<property name="prefixes" type="array">
-				<element value="yoast_purge"/>
-				<element value="Yoast\WP\Purge"/>
+			<!-- Treat the "src" directory as the project root for path to namespace translations. -->
+			<property name="src_directory" type="array">
+				<element value="src"/>
 			</property>
 		</properties>
 	</rule>

@@ -16,7 +16,7 @@ class Yoast_Purge_Media_Settings_Tab_Content {
 	 * Registers the WordPress hooks and filters.
 	 */
 	public function register_hooks() {
-		add_filter( 'wpseo_option_tab-metas_media', array( $this, 'get_content' ) );
+		add_filter( 'wpseo_option_tab-metas_media', [ $this, 'get_content' ] );
 	}
 
 	/**

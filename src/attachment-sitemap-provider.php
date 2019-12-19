@@ -94,7 +94,7 @@ final class Yoast_Purge_Attachment_Sitemap_Provider extends WPSEO_Post_Type_Site
 	public function get_index_links( $max_entries ) {
 		$index_links = parent::get_index_links( $max_entries );
 
-		$index_links = array_map( array( $this, 'set_modification_date' ), $index_links );
+		$index_links = array_map( [ $this, 'set_modification_date' ], $index_links );
 
 		return $index_links;
 	}

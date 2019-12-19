@@ -21,7 +21,7 @@ final class Yoast_Purge_Require_Yoast_SEO_Version {
 			$hook = 'network_' . $hook;
 		}
 
-		add_action( $hook, array( $this, 'show_admin_notices' ) );
+		add_action( $hook, [ $this, 'show_admin_notices' ] );
 	}
 
 	/**

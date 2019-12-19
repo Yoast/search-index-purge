@@ -18,7 +18,7 @@ class Yoast_Purge_Control_Yoast_SEO_Settings {
 	 * @return void
 	 */
 	public function register_hooks() {
-		add_filter( 'wpseo_option_tab-metas_media', array( $this, 'add_hidden_settings' ) );
+		add_filter( 'wpseo_option_tab-metas_media', [ $this, 'add_hidden_settings' ] );
 	}
 
 	/**
@@ -40,6 +40,7 @@ class Yoast_Purge_Control_Yoast_SEO_Settings {
 	 * Ensures the settings are set as we recommend them to be.
 	 *
 	 * @deprecated 1.1.0
+	 * @codeCoverageIgnore
 	 */
 	public function enforce_settings() {
 		// Intentionally left empty.
