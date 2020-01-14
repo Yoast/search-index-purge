@@ -15,7 +15,7 @@ final class Yoast_Purge_Attachment_Page_Server {
 	/**
 	 * Valid image mime types.
 	 *
-	 * @var array
+	 * @var string[]
 	 */
 	private $valid_image_types = [ 'image/jpeg', 'image/gif', 'image/png' ];
 

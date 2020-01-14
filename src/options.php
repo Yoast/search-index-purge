@@ -76,7 +76,7 @@ final class Yoast_Purge_Options {
 	/**
 	 * Returns whether or not attachment pages should be purged.
 	 *
-	 * @return bool Whether or not attachment pages should be purged.
+	 * @return bool|null Whether or not attachment pages should be purged.
 	 */
 	public function get_purge_attachment_pages() {
 		$saved = get_option( self::KEY_PURGE_ATTACHMENT_PAGES, null );
