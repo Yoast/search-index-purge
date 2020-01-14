@@ -38,7 +38,7 @@ if ( ! function_exists( 'add_filter' ) ) {
 	exit();
 }
 
-define( 'YOAST_PURGE_PLUGIN_DIR', dirname( __FILE__ ) );
+define( 'YOAST_PURGE_PLUGIN_DIR', __DIR__ );
 define( 'YOAST_PURGE_FILE', __FILE__ );
 define( 'YOAST_PURGE_VERSION', '1.1.0' );
 
