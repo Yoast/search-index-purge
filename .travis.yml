@@ -42,7 +42,9 @@ before_install:
 
 install:
 - |
-  if [[ "$PHPCS" == "1" ]]; then
+  if [[ $TRAVIS_PHP_VERSION == "nightly" ]]; then
+    composer install --no-interaction --ignore-platform-reqs
+  else
     composer install --no-interaction
   fi
 
@@ -61,7 +63,7 @@ before_script:
 
 script:
 # PHP Linting
-- find -L . -path ./vendor -prune -o -path ./node_modules -prune -o -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
+- composer lint
 
 # PHP CS
 - |
